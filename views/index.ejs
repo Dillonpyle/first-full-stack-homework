@@ -1,0 +1,27 @@
+<% include partials/header %>
+index page
+
+
+<ul>
+<% for(let i = 0; i < userList.length; i++){%>
+    <li> 
+    <!--Show User -->
+    <a href="/users/<%=userList[i]._id%>"><%= userList[i].name%></a>
+     
+    <!--delete button -->
+     <form action="/users/<%=userList[i]._id%>?_method=DELETE" method="POST">
+        <button type="submit">Delete User</button>
+     </form>
+
+    <!--link to edit page -->
+    <a href="/users/<%=userList[i]._id%>/edit">Edit</a>
+    </li>
+    </li>
+<%}%>
+</ul>
+<!-- sign up -->
+<nav>
+<a href="/users/new">Sign Up</a>
+</nav>
+
+<% include partials/footer %>

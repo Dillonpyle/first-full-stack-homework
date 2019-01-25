@@ -1,0 +1,10 @@
+<% include partials/header %>
+edit page
+
+<form action="/users/<%=users._id%>?_method=PUT" method="POST">
+        Name: <input type="text" name="name" value='<%=users.name%>'><br>
+        Model: <input type="text" name="model" value='<%=users.password%>'><br><br>
+        <button type="submit">Edit User info</button>
+    </form>
+
+<% include partials/footer %>
